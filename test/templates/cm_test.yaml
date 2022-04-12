@@ -6,4 +6,4 @@ metadata:
   labels:
     app: {{ include "test.name" . }}
 data:
-  {{- tpl ((.Files.Glob "config/*.yml").AsConfig) . | nindent 2 }}
+  {{- tpl ((.Files.Glob "config2/*.yml").AsConfig) . | nindent 2 }}
