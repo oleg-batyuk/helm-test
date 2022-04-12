@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 88
-  username: quicklizard
+  username: postgresql
 
 production:
   <<: *default
