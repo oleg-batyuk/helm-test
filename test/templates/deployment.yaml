@@ -41,6 +41,10 @@ spec:
               mountPath: /app/config/settings
               readOnly: true
               # subPath: services.yml
+            - name: configdir2
+              mountPath: /app/config/settings2
+              readOnly: true
+              # subPath: services.yml
           ports:
             - name: http
               containerPort: 80
@@ -59,6 +63,9 @@ spec:
         - name: configdir
           configMap:
             name: {{ include "test.name" . }}-config
+        - name: configdir2
+          configMap:
+            name: {{ include "test.name" . }}-config2
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
